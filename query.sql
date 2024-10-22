@@ -61,3 +61,41 @@ WHERE email = 'raja.feugiat@nonummy.com';
 
 ALTER TABLE usuarios
 ADD CONSTRAINT email_unique_usuarios UNIQUE (email);
+
+-- 5) Cadastrando mais usuários no banco de dados e adicionando um novo campo na tabela chamado "situacao"
+INSERT INTO usuarios
+(nome, idade, email, senha)
+VALUES 
+(
+  'Jermaine G. Sellers',
+  16,
+  'ligula.Nullam@tortordictum.co.uk',
+  'o2P56U9U'
+),
+(
+  'James D. Kennedy',
+  23,
+  'amet@Nulladignissim.com',
+  'q6B78V3V'
+),
+(
+  'Amelia S. Harris',
+  29,
+  'nec.metus.facilisis@vitaealiquet.edu',
+  'l4S64Y3A'
+),
+(
+  'Joel M. Hartman',
+  18,
+  'montes.nascetur@odiotristique.co.uk',
+  'c4Q27D7O'
+),
+(
+  'Elmo K. Greer',
+  18,
+  'risus.Duis@eget.ca',
+  'e3P92I7R'
+);
+
+ALTER TABLE usuarios 
+ADD COLUMN situacao BOOLEAN DEFAULT TRUE;
