@@ -1,4 +1,4 @@
--- 1) Criação do banco de dados exercicio_crud_sql e da tabela usuarios
+-- 1) Criação do banco de dados exercicio_crud_sql e da tabela usuarios.
 
 DROP DATABASE IF EXISTS exercicio_cruq_sql;
 
@@ -12,7 +12,7 @@ create table usuarios (
     senha varchar(8) not null
 );
 
--- 2) Cadastrar os dados dos usuários
+-- 2) Cadastrar os dados dos usuários.
 
 INSERT INTO usuarios 
 (nome, idade, email, senha)
@@ -48,13 +48,13 @@ VALUES
   'u2D18F6E'
 );
 
--- 3) Alteração de dados de um usuário em específico
+-- 3) Alteração de dados de um usuário em específico.
 
 UPDATE usuarios
 SET nome = 'Raja W. Coffey Thomas'
 WHERE email = 'raja.feugiat@nonummy.com';
 
--- 4) Alteração da tabela onde permite o cadastro de emails duplicados e exclusão dos usuários com o mesmo email
+-- 4) Alteração da tabela onde permite o cadastro de emails duplicados e exclusão dos usuários com o mesmo email.
 
 DELETE FROM usuarios 
 WHERE email = 'raja.feugiat@nonummy.com';
@@ -62,7 +62,7 @@ WHERE email = 'raja.feugiat@nonummy.com';
 ALTER TABLE usuarios
 ADD CONSTRAINT email_unique_usuarios UNIQUE (email);
 
--- 5) Cadastrando mais usuários no banco de dados e adicionando um novo campo na tabela chamado "situacao"
+-- 5) Cadastrando mais usuários no banco de dados e adicionando um novo campo na tabela chamado "situacao".
 INSERT INTO usuarios
 (nome, idade, email, senha)
 VALUES 
@@ -99,3 +99,11 @@ VALUES
 
 ALTER TABLE usuarios 
 ADD COLUMN situacao BOOLEAN DEFAULT TRUE;
+
+-- 6) Atualização da tabela onde precisa inativar um usuário dela.
+
+UPDATE usuarios
+SET
+situacao = false
+WHERE
+email = 'montes.nascetur@odiotristique.co.uk';
