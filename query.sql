@@ -53,3 +53,11 @@ VALUES
 UPDATE usuarios
 SET nome = 'Raja W. Coffey Thomas'
 WHERE email = 'raja.feugiat@nonummy.com';
+
+-- 4) Alteração da tabela onde permite o cadastro de emails duplicados e exclusão dos usuários com o mesmo email
+
+DELETE FROM usuarios 
+WHERE email = 'raja.feugiat@nonummy.com';
+
+ALTER TABLE usuarios
+ADD CONSTRAINT email_unique_usuarios UNIQUE (email);
