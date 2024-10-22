@@ -103,7 +103,15 @@ ADD COLUMN situacao BOOLEAN DEFAULT TRUE;
 -- 6) Atualização da tabela onde precisa inativar um usuário dela.
 
 UPDATE usuarios
-SET
-situacao = false
-WHERE
-email = 'montes.nascetur@odiotristique.co.uk';
+SET situacao = false
+WHERE email = 'montes.nascetur@odiotristique.co.uk';
+
+-- 7) Alteração de senha de um usuário específico e excluir a coluna de idade para adicionar outra coluna chamada "data_nascimento".
+
+UPDATE usuarios
+SET senha = 'k9P31H1O'
+WHERE email = 'risus.Duis@eget.ca';
+
+ALTER TABLE usuarios
+DROP COLUMN idade,
+ADD COLUMN data_nascimento DATE;
