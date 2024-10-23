@@ -125,3 +125,8 @@ WHERE email = 'auctor@duiFuscediam.edu';
 UPDATE usuarios
 SET data_nascimento = '1988-11-02'
 WHERE email = 'nec.metus.facilisis@vitaealiquet.edu';
+
+-- 9) Exclusão dos registros que estão sem data de nascimento.
+
+DELETE FROM USUARIOS 
+WHERE data_nascimento IS NULL;
