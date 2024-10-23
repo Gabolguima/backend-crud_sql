@@ -126,7 +126,28 @@ UPDATE usuarios
 SET data_nascimento = '1988-11-02'
 WHERE email = 'nec.metus.facilisis@vitaealiquet.edu';
 
--- 9) Exclusão dos registros que estão sem data de nascimento.
+-- 9) Exclusão dos registros que estão sem data de nascimento e alterando a coluna data_nascimento para que seja obritatória.
 
 DELETE FROM USUARIOS 
 WHERE data_nascimento IS NULL;
+
+ALTER TABLE usuarios 
+ALTER COLUMN data_nascimento SET NOT NULL;
+
+-- 10) Cadastrando mais usuários.
+
+INSERT INTO usuarios 
+(nome, data_nascimento, email, senha)
+VALUES 
+(
+  'Tate I. Dean',
+  '1989-05-01',
+  'Nunc@etmagnis.edu',
+  'd3V25D6Y'
+),
+(
+  'Arsenio K. Harmon',
+  '1985-10-23',
+  'adipiscing.elit@turpis.com',
+  'm3T58S0C'
+);
