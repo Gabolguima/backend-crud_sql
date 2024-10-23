@@ -115,3 +115,13 @@ WHERE email = 'risus.Duis@eget.ca';
 ALTER TABLE usuarios
 DROP COLUMN idade,
 ADD COLUMN data_nascimento DATE;
+
+-- 8) Adicionando data de nascimento de usuários.
+
+UPDATE usuarios
+SET data_nascimento = '1991-09-29'
+WHERE email = 'auctor@duiFuscediam.edu';
+
+UPDATE usuarios
+SET data_nascimento = '1988-11-02'
+WHERE email = 'nec.metus.facilisis@vitaealiquet.edu';
